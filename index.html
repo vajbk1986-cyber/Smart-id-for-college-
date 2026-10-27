@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart ID — College Student ID</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f4f6fb,#0d1220);--panel:light-dark(#fff,#171e30);--text:light-dark(#172033,#f3f5fb);--muted:light-dark(#68738a,#aab4c8);--line:light-dark(#e2e7f0,#2d3850);--accent:light-dark(#5146e5,#8d86ff);--soft:light-dark(#eeedff,#28264c)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{min-height:100vh;background:var(--bg)}header{padding:22px max(18px,calc((100vw - 1050px)/2));background:linear-gradient(120deg,#25216d,#5b4de5 65%,#8c80ff);color:white;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:14px;background:#ffffff25;display:grid;place-items:center;font-size:24px}.brand h1{font-size:21px;margin:0}.brand p{margin:3px 0 0;color:#e2e0ff;font-size:12px}.badge{border:1px solid #ffffff60;border-radius:99px;padding:8px 12px;font-size:12px}
+main{max-width:1050px;margin:auto;padding:24px 18px 42px}.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:20px}.intro h2{margin:0 0 5px;font-size:26px;letter-spacing:-.6px}.intro p{margin:0;color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 28px #10162b0a}.panel h3{font-size:16px;margin:0 0 16px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-size:12px;color:var(--muted);font-weight:650}input,select{width:100%;padding:12px 11px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;font-size:14px;outline:none}input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px #6558ef20}.actions{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}.btn{border:0;border-radius:11px;padding:11px 15px;font:inherit;font-size:13px;font-weight:750;cursor:pointer}.primary{background:var(--accent);color:white}.secondary{background:var(--soft);color:var(--accent)}.student-card{overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--panel)}.cardhead{padding:16px 18px;background:linear-gradient(120deg,#29256e,#6558e8);color:white;display:flex;align-items:center;gap:12px}.crest{width:43px;height:43px;display:grid;place-items:center;border:1px solid #ffffff65;border-radius:12px;font-size:21px}.college{font-size:13px;font-weight:800;letter-spacing:.4px}.subcollege{font-size:10px;color:#e1dfff;margin-top:4px}.cardbody{padding:18px;display:grid;grid-template-columns:1fr 86px;gap:12px;align-items:center}.student-name{font-size:20px;font-weight:850;margin-bottom:4px;overflow-wrap:anywhere}.course{color:var(--accent);font-weight:750;font-size:12px;margin-bottom:14px}.detail{font-size:12px;margin:7px 0;color:var(--muted)}.detail strong{color:var(--text);font-weight:700}.avatar{width:82px;height:96px;border-radius:13px;background:var(--soft);display:grid;place-items:center;font-size:37px;color:var(--accent);border:1px solid var(--line)}.cardfoot{border-top:1px dashed var(--line);padding:12px 18px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:10px}.idpill{background:var(--soft);color:var(--accent);border-radius:99px;padding:5px 9px;font-weight:800;font-size:11px}.notice{font-size:11px;line-height:1.5;color:var(--muted);margin-top:12px}.listpanel{margin-top:18px}.listtop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}.listtop h3{margin:0}.search{max-width:260px}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}.empty{text-align:center;padding:24px;color:var(--muted)}.smallbtn{padding:7px 10px;font-size:11px}.danger{color:#d94d5c;background:light-dark(#fff0f1,#3c202c)}footer{text-align:center;color:var(--muted);font-size:11px;margin-top:20px}
+@media(max-width:720px){header{padding:17px 16px}.badge{display:none}.grid{grid-template-columns:1fr}.intro h2{font-size:23px}.panel{padding:16px}.formgrid{gap:10px}.cardbody{grid-template-columns:1fr 76px}.avatar{width:72px;height:88px}}
+@media print{body{background:white;color:#111}.app>header,.intro,.formpanel,.listpanel,footer,.actions,.notice{display:none!important}main{padding:0;max-width:none}.grid{display:block}.panel{border:0;box-shadow:none;padding:0}.student-card{max-width:390px;margin:30px auto;border:1px solid #ddd;color:#111}.cardbody,.cardfoot{color:#555}.student-name,.detail strong{color:#111}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">🪪</div><div><h1>Smart ID</h1><p>College Student Identity Portal</p></div></div><div class="badge">STUDENT ID • DEMO</div></header>
+<main>
+<div class="intro"><div><h2>Student ID Studio</h2><p>Create and manage digital student ID cards.</p></div></div>
+<div class="grid">
+<section class="panel formpanel">
+<h3>✦ Student details</h3>
+<form id="studentForm">
+<div class="formgrid">
+<div class="field full"><label for="college">COLLEGE NAME</label><input id="college" placeholder="e.g. ABC College of Engineering" required></div>
+<div class="field"><label for="name">STUDENT NAME</label><input id="name" placeholder="Full name" required></div>
+<div class="field"><label for="roll">ROLL / ID NUMBER</label><input id="roll" placeholder="e.g. 26CSE014" required></div>
+<div class="field"><label for="dept">DEPARTMENT</label><select id="dept"><option>CSE</option><option>IT</option><option>ECE</option><option>EEE</option><option>Mechanical</option><option>Civil</option><option>B.Com</option><option>B.Sc</option><option>Other</option></select></div>
+<div class="field"><label for="year">YEAR</label><select id="year"><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option><option>PG</option></select></div>
+<div class="field"><label for="valid">VALID THROUGH</label><input id="valid" value="May 2027" required></div>
+<div class="field"><label for="phone">CONTACT (OPTIONAL)</label><input id="phone" placeholder="Student contact"></div>
+</div>
+<div class="actions"><button class="btn primary" type="submit">Create student ID</button><button class="btn secondary" type="button" id="reset">Clear form</button></div>
+</form>
+<p class="notice">Demo note: details are saved only in this browser on this device. This prototype does not connect to a college database or verify identity.</p>
+</section>
+<section class="panel">
+<h3>▣ Digital ID preview</h3>
+<div class="student-card" id="idCard">
+<div class="cardhead"><div class="crest">🎓</div><div><div class="college" id="pCollege">YOUR COLLEGE NAME</div><div class="subcollege">OFFICIAL STUDENT IDENTITY CARD</div></div></div>
+<div class="cardbody"><div><div class="student-name" id="pName">Student Name</div><div class="course" id="pDept">CSE • 1st Year</div><div class="detail">Student ID: <strong id="pRoll">—</strong></div><div class="detail">Valid through: <strong id="pValid">May 2027</strong></div><div class="detail">Contact: <strong id="pPhone">—</strong></div></div><div class="avatar" aria-label="Photo placeholder">👤</div></div>
+<div class="cardfoot"><span>Keep this card with you</span><span class="idpill">STUDENT</span></div>
+</div>
+<div class="actions"><button class="btn primary" id="printBtn" type="button">Print / Save as PDF</button><button class="btn secondary" id="downloadBtn" type="button">Export student list</button></div>
+<p class="notice">For a real deployment, the college should approve the design and securely manage student data. No scannable QR verification is enabled in this demo.</p>
+</section>
+</div>
+<section class="panel listpanel">
+<div class="listtop"><h3>👥 Student records <span class="idpill" id="count">0</span></h3><input class="search" id="search" placeholder="Search name or roll number" aria-label="Search students"></div>
+<div class="tablewrap"><table><thead><tr><th>Name</th><th>Student ID</th><th>Department</th><th>Year</th><th>Action</th></tr></thead><tbody id="rows"><tr><td colspan="5" class="empty">No student records yet. Create your first ID above.</td></tr></tbody></table></div>
+</section>
+<footer>Smart ID prototype • Use fictional student data for testing.</footer>
+</main>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const storageKey = "smart-id-demo-records-v1";
+let records = [];
+try { records = JSON.parse(localStorage.getItem(storageKey) || "[]"); if (!Array.isArray(records)) records = []; } catch { records = []; }
+function formData(){return {college:$("college").value.trim(),name:$("name").value.trim(),roll:$("roll").value.trim(),dept:$("dept").value,year:$("year").value,valid:$("valid").value.trim(),phone:$("phone").value.trim()};}
+function updatePreview(s){$("pCollege").textContent=s.college||"YOUR COLLEGE NAME";$("pName").textContent=s.name||"Student Name";$("pDept").textContent=(s.dept||"CSE")+" • "+(s.year||"1st Year");$("pRoll").textContent=s.roll||"—";$("pValid").textContent=s.valid||"—";$("pPhone").textContent=s.phone||"—";}
+["college","name","roll","dept","year","valid","phone"].forEach(id=>$(id).addEventListener("input",()=>updatePreview(formData())));
+function save(){try{localStorage.setItem(storageKey,JSON.stringify(records));}catch(e){alert("Could not save records in this browser.");}}
+function render(){const q=$("search").value.trim().toLowerCase();const filtered=records.filter(s=>[s.name,s.roll,s.dept,s.year].some(v=>(v||"").toLowerCase().includes(q)));$("count").textContent=records.length;$("rows").innerHTML="";if(!filtered.length){$("rows").innerHTML='<tr><td colspan="5" class="empty">No matching student records.</td></tr>';return;}filtered.forEach(s=>{const tr=document.createElement("tr");[s.name,s.roll,s.dept,s.year].forEach(v=>{const td=document.createElement("td");td.textContent=v;tr.appendChild(td);});const td=document.createElement("td");const view=document.createElement("button");view.className="btn secondary smallbtn";view.textContent="View";view.onclick=()=>{updatePreview(s);["college","name","roll","dept","year","valid","phone"].forEach(k=>$(k).value=s[k]||"");window.scrollTo({top:0,behavior:"smooth"});};const del=document.createElement("button");del.className="btn danger smallbtn";del.style.marginLeft="6px";del.textContent="Delete";del.onclick=()=>{if(confirm("Delete this student record from this browser?")){records=records.filter(r=>r.roll!==s.roll);save();render();}};td.append(view,del);tr.appendChild(td);$("rows").appendChild(tr);});}
+$("studentForm").addEventListener("submit",e=>{e.preventDefault();const s=formData();if(!s.name||!s.roll||!s.college)return;if(records.some(r=>r.roll.toLowerCase()===s.roll.toLowerCase())){alert("That student ID already exists. Please use a unique ID.");return;}records.unshift(s);save();render();updatePreview(s);alert("Student ID created in this browser.");});
+$("reset").onclick=()=>{$("studentForm").reset();$("valid").value="May 2027";updatePreview(formData());};
+$("search").addEventListener("input",render);
+$("printBtn").onclick=()=>window.print();
+$("downloadBtn").onclick=()=>{const blob=new Blob([JSON.stringify(records,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="smart-id-student-records.json";a.click();URL.revokeObjectURL(a.href);};
+render();updatePreview({college:"",name:"",roll:"",dept:"CSE",year:"1st Year",valid:"May 2027",phone:""});
+</script>
+</body>
+</html>
