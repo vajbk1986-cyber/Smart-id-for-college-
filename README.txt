@@ -1,11 +1,17 @@
-Smart ID website source package
+SMART ID ANDROID WRAPPER PROJECT
 
-Contents:
-- index.html: your original Smart ID web application.
+This is Android app SOURCE PROJECT, not a prebuilt APK. It wraps the supplied HTML app inside an Android WebView and includes local HTML assets.
 
-This ZIP contains the website files. It is NOT an Android APK. To create an installable APK, you need an Android WebView wrapper/build service or Android build environment.
+Features included:
+- Opens the Smart ID HTML app offline inside the Android app
+- JavaScript and browser Local Storage enabled
+- Print button opens Android print/save-as-PDF flow
+- Export button lets the user choose where to save the JSON file
 
-To test on Android:
-1. Extract this ZIP using your phone's Files app.
-2. Open index.html with a browser if your file manager offers that option.
-3. If it shows code or will not open, use an HTML preview/editor app or host it on a trusted static website service.
+BUILD NOTE
+To build an APK, open this project in Android Studio or a compatible Android IDE that supports Gradle and Android SDK 35. Allow Gradle sync to finish, then build an APK. This environment did not have the Android SDK installed, so no APK has been compiled here.
+
+For a phone-only workflow, you will need an Android IDE app that can import Gradle projects and install the Android SDK/build tools. This may take setup time and internet data. Test the APK before presenting.
+
+Package name: com.example.smartid
+App name: Smart ID

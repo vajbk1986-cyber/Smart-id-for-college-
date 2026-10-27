@@ -67,8 +67,8 @@ function render(){const q=$("search").value.trim().toLowerCase();const filtered=
 $("studentForm").addEventListener("submit",e=>{e.preventDefault();const s=formData();if(!s.name||!s.roll||!s.college)return;if(records.some(r=>r.roll.toLowerCase()===s.roll.toLowerCase())){alert("That student ID already exists. Please use a unique ID.");return;}records.unshift(s);save();render();updatePreview(s);alert("Student ID created in this browser.");});
 $("reset").onclick=()=>{$("studentForm").reset();$("valid").value="May 2027";updatePreview(formData());};
 $("search").addEventListener("input",render);
-$("printBtn").onclick=()=>window.print();
-$("downloadBtn").onclick=()=>{const blob=new Blob([JSON.stringify(records,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="smart-id-student-records.json";a.click();URL.revokeObjectURL(a.href);};
+$("printBtn").onclick=()=>{if(window.AndroidBridge){window.AndroidBridge.printCard();}else{window.print();}};
+$("downloadBtn").onclick=()=>{if(window.AndroidBridge){window.AndroidBridge.exportJson(JSON.stringify(records,null,2));return;}const blob=new Blob([JSON.stringify(records,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="smart-id-student-records.json";a.click();URL.revokeObjectURL(a.href);};
 render();updatePreview({college:"",name:"",roll:"",dept:"CSE",year:"1st Year",valid:"May 2027",phone:""});
 </script>
 </body>
